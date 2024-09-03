@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Input</title>
+</head>
+<body>
+  <form>
+    <input type="search" id="search-input" placeholder="Search...">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="search-result"></div>
+
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const searchResultDiv = document.getElementById("search-result");
+
+    document.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const searchText = searchInput.value;
+      if (searchText == ""){
+        searchResultDiv.innerHTML = "Tidak mencari data...";
+      } else {
+        searchResultDiv.innerText = `Mencari data ${searchText}...`;
+      }
+    });
+  </script>
+</body>
+</html>

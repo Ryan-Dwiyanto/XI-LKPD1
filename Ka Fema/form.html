@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="tipe_pertanyaan">Pertanyaan</label>
+            <input type="text" id="tipe_pertanyaan" name="tipe_pertanyaan">
+        </div>
+        <div id="Opsi">
+            <p>Opsi Jawaban & Poin*</p>
+            <div>
+                <label for="Opsi_1">Opsi 1 :</label>
+                <br>
+                <input type="number" id="Opsi_1" name="Opsi_1" placeholder="Poin">
+                <input type="text" id="Opsi_1" name="Opsi_1" placeholder="deskripsi poin">
+            </div>
+        </div>
+
+        <div>
+            <a id="click" href="#" onclick="addOption()">*Tambahkan Opsi</a>
+        </div>
+
+        <script>
+            let inputcount=1
+            function addOption() {
+                //setelah tag a dipencet maka akan membuat div dengan content opsi yang baru
+                inputcount++;
+                var div = document.createElement('div');
+                div.innerHTML = `
+                <label for="Opsi_${inputcount}">Opsi ${inputcount} :</label>
+                <br>
+                <input type="number" id="Opsi_${inputcount}" name="Opsi_${inputcount}" placeholder="Poin">
+                <input type="text" id="Opsi_${inputcount}" name="Opsi_${inputcount}" placeholder="deskripsi poin">
+                `
+                // Memasukkan tag div kedalam div id="Opsi"
+                document.getElementById("Opsi").appendChild(div);
+                if (inputcount >= 5) {
+                    document.getElementById("click").style.display = "none";
+                }
+            }
+
+        </script>
+        
+    </form>
+</body>
+</html>

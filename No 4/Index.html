@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="script.js">
+    </script>
+</head>
+<body>
+        <label for="image-select">Select Image:</label>
+        <select id="image-select">
+            <option value="" selected disabled hidden>Pilih Gambar</option>
+            <option value="image1">Image 1</option>
+            <option value="image2">Image 2</option>
+            <option value="image3">Image 3</option>
+        </select>
+    
+        <label for="opacity-select">Select Opacity:</label>
+        <select id="opacity-select">
+            <option value="" selected disabled hidden>Pilih Opacity</option>
+            <option value="1">100%</option>
+            <option value="0.5">50%</option>
+            <option value="0.2">20%</option>
+        </select>
+        <button type="submit" onclick="updateImage()">Kirim</button>
+    <div class="image-container">
+        <img id="image1" src="Image/Image1.jpg" alt="Selected Image" style="opacity: 1;">
+        <img id="image2" src="Image/Image2.jpg" alt="Selected Image" style="opacity: 1;">
+        <img id="image3" src="Image/Image3.jpg" alt="Selected Image" style="opacity: 1;">
+    </div>
+
+</body>
+</html>

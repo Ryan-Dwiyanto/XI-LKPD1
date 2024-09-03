@@ -1,0 +1,29 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Countdown Display Button</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div id="countdown"></div>
+        <button onclick="startCountdown()">Munculkan Alert</button>
+        <script>
+            function startCountdown() {
+                let count = 5;
+                const countdownDiv = document.getElementById('countdown');
+                countdownDiv.textContent = "Danger! Alert akan tertutup dalam "+count;
+
+                const interval = setInterval(() => {
+                    count--;
+                    countdownDiv.textContent = "Danger! Alert akan tertutup dalam "+count;
+                    if (count < 1) {
+                        clearInterval(interval);
+                        countdownDiv.textContent = '';
+                    }
+                }, 1000);
+            }
+        </script>
+    </body>
+</html>
